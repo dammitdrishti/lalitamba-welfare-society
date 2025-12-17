@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lalitamba Social Welfare Society | Empowering Lives</title>
+    <title>Lalitamba Social Welfare Society</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
@@ -18,8 +18,9 @@
             --text-dark: #2D3436;
             --text-gray: #636e72;
             --white: #ffffff;
-            --bg-light: #f4f7f6;
+            --bg-light: #f8f9fa;
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
             --radius: 12px;
         }
         
@@ -29,94 +30,65 @@
             font-family: 'Open Sans', sans-serif; 
             background-color: var(--bg-light); 
             color: var(--text-dark); 
-            line-height: 1.7; 
+            line-height: 1.6; 
         }
 
         h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; color: var(--text-dark); }
         
-        /* --- HEADER & NAV --- */
+        /* --- HEADER --- */
         header {
             background-color: var(--white);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 0.5rem 0; /* Added padding to container */
         }
-
-        /* Top bar removed here */
 
         .navbar {
             padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            max-width: 1250px; /* Center nav on large screens */
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img { height: 55px; width: auto; }
-
-        .logo-text h1 { 
-            color: var(--primary); 
-            font-size: 1.4rem; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            line-height: 1; 
-        }
-        .logo-text p { color: var(--text-gray); font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 50px; width: auto; }
+        .logo-text h1 { color: var(--primary); font-size: 1.3rem; font-weight: 700; text-transform: uppercase; line-height: 1; }
+        .logo-text p { color: var(--text-gray); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px; }
 
         .nav-links { display: flex; align-items: center; gap: 25px; }
-
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
             font-size: 0.95rem;
-            font-family: 'Poppins', sans-serif;
             transition: color 0.3s;
-            position: relative;
         }
-
-        .nav-links a:not(.btn-donate-nav)::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-        .nav-links a:not(.btn-donate-nav):hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary); }
 
         .btn-donate-nav {
             background: linear-gradient(135deg, var(--primary), #FF9100);
             color: white !important;
             padding: 10px 25px;
             border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 111, 0, 0.3);
             transition: transform 0.2s;
         }
         .btn-donate-nav:hover { transform: translateY(-2px); }
 
-        /* --- HERO SECTION (UPDATED FOR VISIBILITY) --- */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            /* Increased overlay opacity to 0.8 for better contrast */
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/6.6.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/6.6.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
             padding: 6rem 5%;
             text-align: center;
-            min-height: 80vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -124,97 +96,82 @@
         }
 
         .hero h2 { 
-            font-size: 3.5rem; 
+            font-size: 3rem; 
             margin-bottom: 1rem; 
             font-weight: 700;
-            color: var(--white); /* Ensure title is white */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Added shadow for pop */
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             animation: fadeInDown 1s ease;
         }
         
         .hero p { 
-            font-size: 1.25rem; 
-            max-width: 750px; 
+            font-size: 1.2rem; 
+            max-width: 800px; 
             margin-bottom: 2.5rem; 
-            opacity: 1; /* Full opacity */
-            color: rgba(255,255,255,0.95); /* Almost pure white text */
+            opacity: 0.95;
+            color: #f0f0f0;
             animation: fadeInUp 1s ease 0.3s backwards;
         }
 
         .hero-btn { 
             background: var(--white); 
             color: var(--primary); 
-            padding: 15px 40px; 
+            padding: 14px 35px; 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: 700; 
-            font-size: 1.1rem; 
             transition: all 0.3s;
             animation: fadeInUp 1s ease 0.6s backwards;
         }
-        .hero-btn:hover { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .hero-btn:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
         @keyframes fadeInDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
         @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-        /* --- SECTIONS GENERAL --- */
-        .section-padding { padding: 5rem 5%; max-width: 1250px; margin: 0 auto; }
-        
+        /* --- GENERAL SECTION STYLES --- */
+        .section-padding { padding: 4rem 5%; max-width: 1300px; margin: 0 auto; }
         .section-title { 
             text-align: center; 
-            margin-bottom: 4rem; 
-            color: var(--text-dark); 
-            font-size: 2.4rem; 
-            font-weight: 700;
+            margin-bottom: 3rem; 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            position: relative;
         }
         .section-title span { color: var(--primary); }
         .section-title::after { 
-            content: ''; display: block; width: 80px; height: 4px; 
-            background: var(--primary); margin: 15px auto 0; border-radius: 2px;
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--primary); margin: 10px auto 0; border-radius: 2px;
         }
 
-        /* --- INITIATIVES (CARD DESIGN) --- */
-        .initiative-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 4rem;
+        /* --- INITIATIVES GRID (NEW LAYOUT) --- */
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .initiative-card {
             background: var(--white);
-            padding: 0;
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            box-shadow: var(--card-shadow);
             overflow: hidden;
-            transition: transform 0.3s;
-        }
-        
-        .initiative-row:hover { transform: translateY(-5px); }
-
-        .initiative-row:nth-child(even) { flex-direction: row-reverse; }
-
-        .initiative-text { flex: 1; min-width: 320px; padding: 3rem; }
-        .initiative-text h3 { color: var(--text-dark); font-size: 1.8rem; margin-bottom: 1rem; }
-        .initiative-text p { color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1rem; }
-        
-        .initiative-number {
-            display: inline-block;
-            background: var(--primary-light);
-            color: var(--primary);
-            font-weight: bold;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* --- CAROUSEL REFINED --- */
-        .carousel-container {
-            flex: 1;
-            min-width: 320px;
+        .initiative-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Card Carousel Area */
+        .card-carousel {
+            height: 220px;
+            width: 100%;
             position: relative;
-            height: 400px; /* Taller images */
-            overflow: hidden;
             background: #eee;
+            overflow: hidden;
         }
 
         .carousel-slide {
@@ -222,165 +179,151 @@
             height: 100%;
             object-fit: cover;
             position: absolute;
-            transition: opacity 0.6s ease-in-out;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
-        
-        .carousel-slide.active { opacity: 1; z-index: 2; }
+        .carousel-slide.active { opacity: 1; }
 
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.8);
-            color: var(--text-dark);
-            border: none;
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            font-weight: bold;
-            transition: background 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        /* Card Content Area */
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
-        .carousel-btn:hover { background: var(--white); color: var(--primary); }
-        .prev { left: 15px; }
-        .next { right: 15px; }
 
-        .usa-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #007bff;
-            color: white;
-            padding: 10px 24px;
-            text-decoration: none;
-            border-radius: 6px;
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .card-content h3 { font-size: 1.3rem; margin-bottom: 0.8rem; line-height: 1.3; }
+        .card-content p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1.2rem; flex: 1; }
+
+        .usa-link {
+            color: #007bff;
             font-weight: 600;
-            margin-top: 10px;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 0.9rem;
+            align-self: flex-start;
         }
-        .usa-btn:hover { background: #0056b3; transform: translateY(-2px); }
+        .usa-link:hover { text-decoration: underline; }
 
-        /* --- DONATION SECTION --- */
-        .donate-section {
-            background-color: var(--primary-light);
-            text-align: center;
-            padding: 6rem 5%;
+        /* --- DONATION SECTION (SIDE BY SIDE) --- */
+        .donate-wrapper {
+            background: var(--primary-light);
+            padding: 4rem 5%;
+            border-radius: var(--radius);
         }
 
-        .qr-box {
+        .donate-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 3rem;
+        }
+
+        .donate-text { flex: 1; min-width: 300px; }
+        .donate-text h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .donate-text p { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; }
+
+        .donate-qr-box {
+            flex: 0 0 300px;
             background: var(--white);
-            padding: 3rem;
+            padding: 1.5rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            display: inline-block;
-            max-width: 400px;
             text-align: center;
             border: 2px dashed var(--primary);
         }
-        .qr-img { width: 100%; max-width: 250px; height: auto; margin: 15px 0; }
-        
-        /* --- CONTACT SECTION (NEW CLEAN LAYOUT) --- */
-        .contact-container { display: flex; flex-wrap: wrap; gap: 3rem; }
+        .donate-qr-box img { width: 100%; height: auto; border-radius: 8px; }
 
-        .contact-info { 
-            flex: 1; min-width: 300px; 
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .contact-info-card {
+            flex: 1; min-width: 300px;
             background: var(--white);
             padding: 2.5rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
-        
-        .contact-item { margin-bottom: 2rem; display: flex; gap: 20px; align-items: flex-start; }
-        .contact-item .icon-box {
-            background: var(--primary-light);
-            color: var(--primary);
-            width: 50px; height: 50px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%;
-            font-size: 1.2rem;
+
+        .info-item { display: flex; gap: 15px; margin-bottom: 1.5rem; }
+        .info-icon { 
+            width: 40px; height: 40px; 
+            background: var(--primary-light); color: var(--primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
         }
-        .contact-item h5 { font-size: 1.1rem; margin-bottom: 5px; }
-        .contact-item p { color: var(--text-gray); font-size: 0.95rem; }
-
-        /* Cleaner Social Media Section */
-        .social-connect-box {
-            margin-top: 3rem;
-            padding-top: 2rem;
+        
+        /* Social Mini-Block */
+        .social-mini {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid #eee;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
-        .social-qr-clean {
-            width: 100px;
-            height: 100px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            padding: 5px;
+        .social-mini img { width: 80px; border-radius: 5px; border: 1px solid #ddd; }
+        .social-btns a { 
+            font-size: 1.5rem; margin-right: 15px; transition: transform 0.2s; display: inline-block;
         }
-        .social-links-container h5 { margin-bottom: 10px; }
-        .social-icons-row { display: flex; gap: 15px; }
-        .social-icon-link { font-size: 1.8rem; transition: transform 0.2s; }
-        .social-icon-link:hover { transform: scale(1.1); }
+        .social-btns a:hover { transform: scale(1.1); }
 
-
-        .form-box {
-            flex: 1.5; min-width: 300px;
+        .contact-form-card {
+            flex: 1.2; min-width: 300px;
             background: var(--white);
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
         }
 
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
+        .form-row { display: flex; gap: 15px; }
+        .form-col { flex: 1; }
         
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #fdfdfd;
-            font-family: inherit;
-            transition: border 0.3s;
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: #555; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit;
         }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); outline: none; background: white; }
-        
+        .form-group input:focus { border-color: var(--primary); outline: none; }
+
         .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary), #FF9100);
-            color: white;
-            padding: 16px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s;
-            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.3);
+            background: var(--primary); color: white; border: none; padding: 12px 25px;
+            border-radius: 6px; font-weight: 700; cursor: pointer; width: 100%; font-size: 1rem;
+            transition: background 0.3s;
         }
-        .submit-btn:hover { transform: translateY(-2px); }
+        .submit-btn:hover { background: var(--primary-dark); }
 
         /* --- FOOTER --- */
-        footer { background: #1a1a1a; color: #888; padding: 4rem 5% 2rem; font-size: 0.9rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; text-align: left; }
-        .footer-col h4 { color: white; margin-bottom: 1.5rem; font-size: 1.2rem; }
-        .footer-col p { margin-bottom: 10px; }
-        .footer-bottom { border-top: 1px solid #333; margin-top: 3rem; padding-top: 1.5rem; text-align: center; }
+        footer { background: #1a1a1a; color: #999; padding: 3rem 5%; font-size: 0.9rem; }
+        .footer-content { 
+            display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; max-width: 1300px; margin: 0 auto;
+        }
+        .footer-col h4 { color: white; margin-bottom: 1rem; }
+        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #333; }
 
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
+            .navbar { flex-direction: column; gap: 1rem; }
             .nav-links { flex-wrap: wrap; justify-content: center; }
-            .hero h2 { font-size: 2.2rem; }
-            .initiative-row { flex-direction: column !important; }
-            .initiative-text { padding: 2rem; }
-            .carousel-container { height: 250px; }
-            .social-connect-box { flex-direction: column; text-align: center; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .hero h2 { font-size: 2rem; }
+            .donate-container { flex-direction: column-reverse; text-align: center; }
+            .form-row { flex-direction: column; gap: 0; }
         }
     </style>
 </head>
@@ -389,17 +332,16 @@
     <header>
         <nav class="navbar">
             <div class="logo-container">
-                <img src="images/logo.jpeg" alt="Lalitamba Logo" class="logo-img">
+                <img src="images/logo.jpeg" alt="Logo" class="logo-img">
                 <div class="logo-text">
                     <h1>Lalitamba</h1>
                     <p>SOCIAL WELFARE SOCIETY</p>
                 </div>
             </div>
             <div class="nav-links">
-                <a href="#about">About</a>
                 <a href="#initiatives">Our Work</a>
                 <a href="#contact">Contact</a>
-                <a href="#donate" class="btn-donate-nav">Donate Now <i class="fas fa-heart"></i></a>
+                <a href="#donate" class="btn-donate-nav">Donate <i class="fas fa-heart"></i></a>
             </div>
         </nav>
     </header>
@@ -412,260 +354,226 @@
 
     <section id="initiatives" class="section-padding">
         <h2 class="section-title">Our <span>Initiatives</span></h2>
+        
+        <div class="initiatives-grid">
+            
+            <div class="initiative-card">
+                <div class="card-carousel" id="c1">
+                    <img src="images/1.1.jpeg" class="carousel-slide active">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 01</span>
+                    <h3>IT Education</h3>
+                    <p>Running Unique Skills Academy, affiliated with MCU. Offering PGDCA/DCA to empower youth.</p>
+                    <a href="https://uscbpl.in" target="_blank" class="usa-link">Visit Website →</a>
+                </div>
+            </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 01</span>
-                <h3>Education & IT Training</h3>
-                <p>We run the <strong>Unique Skills Academy of IT Education</strong>, affiliated with Makhanlal Chaturvedi National University. Offering PGDCA, DCA, and job-oriented courses to empower youth with industry-relevant digital skills.</p>
-                <a href="https://uscbpl.in" target="_blank" class="usa-btn">Visit Academy Website <i class="fas fa-arrow-right"></i></a>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c2">
+                    <img src="images/2.1.jpeg" class="carousel-slide active">
+                    <img src="images/2.2.jpeg" class="carousel-slide">
+                    <img src="images/2.3.jpeg" class="carousel-slide">
+                    <img src="images/2.4.jpeg" class="carousel-slide">
+                    <img src="images/2.5.jpeg" class="carousel-slide">
+                    <img src="images/2.6.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 02</span>
+                    <h3>Women & Child Welfare</h3>
+                    <p>Self-defense classes, nutrition sessions, and Anganwadi essentials distribution.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c1">
-                <img src="images/1.1.jpeg" class="carousel-slide active">
-                <button class="carousel-btn prev" onclick="moveSlide('c1', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c1', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 02</span>
-                <h3>Women & Child Welfare</h3>
-                <p>Uplifting women and children through self-defense classes, nutrition sessions, and essential distribution in Anganwadis. We focus on early childhood education and creating a secure, informed society.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c3">
+                    <img src="images/3.1.jpeg" class="carousel-slide active">
+                    <img src="images/3.2.jpeg" class="carousel-slide">
+                    <img src="images/3.3.jpeg" class="carousel-slide">
+                    <img src="images/3.4.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 03</span>
+                    <h3>Health & Hygiene</h3>
+                    <p>Health camps, blood donation drives, and medical check-ups for the underprivileged.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c2">
-                <img src="images/2.1.jpeg" class="carousel-slide active">
-                <img src="images/2.2.jpeg" class="carousel-slide">
-                <img src="images/2.3.jpeg" class="carousel-slide">
-                <img src="images/2.4.jpeg" class="carousel-slide">
-                <img src="images/2.5.jpeg" class="carousel-slide">
-                <img src="images/2.6.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c2', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c2', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 03</span>
-                <h3>Health & Hygiene Awareness</h3>
-                <p>Regular health camps, blood donation drives, and hygiene awareness campaigns. We provide free medical check-ups and immunization support to make healthcare accessible for the underprivileged.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c4">
+                    <img src="images/4.1.jpeg" class="carousel-slide active">
+                    <img src="images/4.2.jpeg" class="carousel-slide">
+                    <img src="images/4.3.jpeg" class="carousel-slide">
+                    <img src="images/4.4.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 04</span>
+                    <h3>Environment</h3>
+                    <p>Green India Mission: Tree plantation drives and Swachhta Abhiyan campaigns.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c3">
-                <img src="images/3.1.jpeg" class="carousel-slide active">
-                <img src="images/3.2.jpeg" class="carousel-slide">
-                <img src="images/3.3.jpeg" class="carousel-slide">
-                <img src="images/3.4.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c3', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c3', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 04</span>
-                <h3>Environment & Cleanliness</h3>
-                <p>Promoting sustainability through the Green India Mission. We organize tree plantation drives and Swachhta Abhiyan campaigns to instill a culture of cleanliness and civic responsibility.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c5">
+                    <img src="images/5.1.jpeg" class="carousel-slide active">
+                    <img src="images/5.2.jpeg" class="carousel-slide">
+                    <img src="images/5.3.jpeg" class="carousel-slide">
+                    <img src="images/5.4.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 05</span>
+                    <h3>Community Support</h3>
+                    <p>Distribution of food, clothes, and hygiene essentials during festivals and emergencies.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c4">
-                <img src="images/4.1.jpeg" class="carousel-slide active">
-                <img src="images/4.2.jpeg" class="carousel-slide">
-                <img src="images/4.3.jpeg" class="carousel-slide">
-                <img src="images/4.4.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c4', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c4', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 05</span>
-                <h3>Community Support & Relief</h3>
-                <p>Standing by the community during festivals and emergencies. We distribute food, clothes, and hygiene essentials to the most vulnerable sections of society with dignity and compassion.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c6">
+                    <img src="images/6.1.jpeg" class="carousel-slide active">
+                    <img src="images/6.2.jpeg" class="carousel-slide">
+                    <img src="images/6.3.jpeg" class="carousel-slide">
+                    <img src="images/6.4.jpeg" class="carousel-slide">
+                    <img src="images/6.5.jpeg" class="carousel-slide">
+                    <img src="images/6.6.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 06</span>
+                    <h3>Youth Development</h3>
+                    <p>Skill development workshops, sports meets, and cultural engagement activities.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c5">
-                <img src="images/5.1.jpeg" class="carousel-slide active">
-                <img src="images/5.2.jpeg" class="carousel-slide">
-                <img src="images/5.3.jpeg" class="carousel-slide">
-                <img src="images/5.4.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c5', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c5', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 06</span>
-                <h3>Youth Development & Culture</h3>
-                <p>Fostering the growth of future leaders through skill development workshops, public speaking, sports meets, and cultural engagement activities that nurture creativity and confidence.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c7">
+                    <img src="images/7.1.jpeg" class="carousel-slide active">
+                    <img src="images/7.2.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 07</span>
+                    <h3>Handicraft Mela</h3>
+                    <p>Supporting artisans by organizing fairs to showcase handmade products.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c6">
-                <img src="images/6.1.jpeg" class="carousel-slide active">
-                <img src="images/6.2.jpeg" class="carousel-slide">
-                <img src="images/6.3.jpeg" class="carousel-slide">
-                <img src="images/6.4.jpeg" class="carousel-slide">
-                <img src="images/6.5.jpeg" class="carousel-slide">
-                <img src="images/6.6.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c6', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c6', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 07</span>
-                <h3>Handicraft Mela & Entrepreneurship</h3>
-                <p>Supporting artisans and small-scale entrepreneurs by organizing fairs that showcase handmade products. A platform to boost income generation and celebrate cultural heritage.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c8">
+                    <img src="images/2.3.jpeg" class="carousel-slide active">
+                    <img src="images/2.4.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 08</span>
+                    <h3>Women Awards</h3>
+                    <p>Honoring outstanding women entrepreneurs on International Women's Day.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c7">
-                <img src="images/7.1.jpeg" class="carousel-slide active">
-                <img src="images/7.2.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c7', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c7', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 08</span>
-                <h3>Women Entrepreneur Awards</h3>
-                <p>Celebrating International Women's Day by honoring outstanding women entrepreneurs. This initiative recognizes courage, innovation, and resilience in business to inspire others.</p>
+            <div class="initiative-card">
+                <div class="card-carousel" id="c9">
+                    <img src="images/9.1.jpeg" class="carousel-slide active">
+                    <img src="images/9.2.jpeg" class="carousel-slide">
+                </div>
+                <div class="card-content">
+                    <span class="card-number">Project 09</span>
+                    <h3>Mitti Ke Ganesh</h3>
+                    <p>Eco-friendly initiative teaching the community to create clay Ganesh idols.</p>
+                </div>
             </div>
-            <div class="carousel-container" id="c8">
-                <img src="images/2.3.jpeg" class="carousel-slide active">
-                <img src="images/2.4.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c8', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c8', 1)">❯</button>
-            </div>
-        </div>
 
-        <div class="initiative-row">
-            <div class="initiative-text">
-                <span class="initiative-number">Project 09</span>
-                <h3>Mitti Ke Ganesh Workshop</h3>
-                <p>An eco-friendly initiative inviting the community to create clay Ganesh idols. Spreading awareness about pollution-free celebrations and using natural materials.</p>
-            </div>
-            <div class="carousel-container" id="c9">
-                <img src="images/9.1.jpeg" class="carousel-slide active">
-                <img src="images/9.2.jpeg" class="carousel-slide">
-                <button class="carousel-btn prev" onclick="moveSlide('c9', -1)">❮</button>
-                <button class="carousel-btn next" onclick="moveSlide('c9', 1)">❯</button>
-            </div>
         </div>
     </section>
 
-    <section id="donate" class="donate-section">
-        <h2 class="section-title">Support Our <span>Cause</span></h2>
-        <p style="font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto 3rem;">Your contribution helps us feed the hungry, educate the youth, and empower women. Every bit counts.</p>
-        
-        <div class="qr-box">
-            <h4 style="color: var(--primary);">Scan to Donate via UPI</h4>
-            <img src="images/upi.jpeg" alt="UPI QR Code" class="qr-img">
-            <p style="font-weight:600; font-size: 1.1rem;">Lalitamba Social Welfare Society</p>
-            <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">Bank Certified | Tax Exempt</p>
+    <section id="donate" class="section-padding">
+        <div class="donate-wrapper">
+            <div class="donate-container">
+                <div class="donate-text">
+                    <h2>Support Our Cause</h2>
+                    <p>Your contribution helps us feed the hungry, educate the youth, and empower women. Scan the QR code to donate instantly via UPI.</p>
+                    <p><strong>Bank Certified | Tax Exempt (80G)</strong></p>
+                </div>
+                <div class="donate-qr-box">
+                    <h4 style="color:var(--primary); margin-bottom:10px;">Scan to Donate</h4>
+                    <img src="images/upi.jpeg" alt="UPI QR Code">
+                    <p style="margin-top:10px; font-weight:bold;">Lalitamba Social Welfare Society</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="section-padding">
         <h2 class="section-title">Get in <span>Touch</span></h2>
+        
         <div class="contact-container">
-            <div class="contact-info">
-                <h3 style="margin-bottom: 2rem;">Contact Information</h3>
-                
-                <div class="contact-item">
-                    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-info-card">
+                <h3>Contact Info</h3>
+                <br>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
-                        <h5>Address</h5>
-                        <p>68, New MLA Colony, Jawahar Chowk,<br>Bhopal-462003 (M.P.)</p>
+                        <h5 style="margin-bottom:5px">Address</h5>
+                        <p style="font-size:0.9rem; color:#666">68, New MLA Colony,<br>Jawahar Chowk, Bhopal-462003</p>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
                     <div>
-                        <h5>Phone</h5>
-                        <p><a href="tel:07554254278" style="color:inherit; text-decoration:none;">0755-4254278</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <h5>Email</h5>
-                        <p>lalitamba.society@gmail.com</p>
+                        <h5 style="margin-bottom:5px">Phone</h5>
+                        <p style="font-size:0.9rem; color:#666">0755-4254278</p>
                     </div>
                 </div>
                 
-                <div class="social-connect-box">
-                    <img src="images/insta.jpeg" alt="Instagram QR" class="social-qr-clean">
-                    <div class="social-links-container">
-                        <h5>Connect on Social Media</h5>
-                        <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: 10px;">Scan QR or click icons below:</p>
-                        <div class="social-icons-row">
-                            <a href="https://www.instagram.com/lalitamba.society?utm_source=qr&igsh=MTJzZHlwdHkza25odQ==" target="_blank" class="social-icon-link" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/share/1968sdhoyJ/" target="_blank" class="social-icon-link" style="color: #1877F2;"><i class="fab fa-facebook"></i></a>
-                        </div>
+                <div class="social-mini">
+                    <img src="images/insta.jpeg" alt="Insta QR">
+                    <div class="social-btns">
+                        <p style="font-size:0.8rem; margin-bottom:5px;">Connect with us:</p>
+                        <a href="https://www.instagram.com/lalitamba.society?utm_source=qr&igsh=MTJzZHlwdHkza25odQ==" style="color:#E1306C"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1968sdhoyJ/" style="color:#1877F2"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="form-box">
-                <h3 style="color: var(--primary); margin-bottom: 2rem;">Send us a Message</h3>
+            <div class="contact-form-card">
+                <h3 style="margin-bottom:1.5rem; color:var(--primary)">Send a Message</h3>
                 <form action="https://formspree.io/f/xojaaajn" method="POST">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" name="name" placeholder="Enter your name" required>
+                    <div class="form-row">
+                        <div class="form-col form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-col form-group">
+                            <label>Mobile</label>
+                            <input type="tel" name="mobile" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label>Mobile Number</label>
-                        <input type="tel" name="mobile" placeholder="Enter mobile number" required>
+                        <label>Email</label>
+                        <input type="email" name="email">
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" name="email" placeholder="Enter email address">
-                    </div>
-                    <div class="form-group">
-                        <label>Purpose of Contact</label>
-                        <select name="purpose">
-                            <option value="Enquiry">General Enquiry</option>
-                            <option value="Donation">Donation / Charity</option>
-                            <option value="Volunteer">Volunteering</option>
-                            <option value="CSR">CSR Collaboration</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Message</label>
-                        <textarea name="message" rows="5" placeholder="How can we help you?"></textarea>
+                        <label>Message</label>
+                        <textarea name="message" rows="3"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
 
-        <div style="margin-top: 4rem; height: 400px; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);">
-             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3664723467!2d77.398!3d23.230!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c6888c30d3139%3A0x63335e52c8427f29!2sJawahar%20Chowk%2C%20Bhopal%2C%20Madhya%20Pradesh%20462003!5e0!3m2!1sen!2sin!4v1708182222222!5m2!1sen!2sin" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+        <div style="margin-top: 3rem; height: 300px; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3664723467!2d77.398!3d23.230!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c6888c30d3139%3A0x63335e52c8427f29!2sJawahar%20Chowk%2C%20Bhopal%2C%20Madhya%20Pradesh%20462003!5e0!3m2!1sen!2sin!4v1708182222222!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-col" style="flex: 1.5;">
-                <h4 style="color: var(--primary);">Lalitamba Social Welfare Society</h4>
-                <p>Empowering the underprivileged through education, health, and skill development since 2012.</p>
-                <p style="margin-top: 15px;"><strong style="color:white;">Reg. No:</strong> 01/01/01/24673/12<br>
-                <strong style="color:white;">Certifications:</strong> 12A, 80G, CSR Approved</p>
+            <div class="footer-col">
+                <h4>Lalitamba Social Welfare Society</h4>
+                <p>Reg No: 01/01/01/24673/12</p>
+                <p>12A, 80G, CSR Certified</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <p><a href="#about" style="color:#aaa; text-decoration:none;">About Us</a></p>
-                <p><a href="#initiatives" style="color:#aaa; text-decoration:none;">Our Projects</a></p>
-                <p><a href="#donate" style="color:#aaa; text-decoration:none;">Donate</a></p>
-                <p><a href="#contact" style="color:#aaa; text-decoration:none;">Contact</a></p>
-            </div>
-            <div class="footer-col">
-                 <h4>Location</h4>
-                 <p>68, New MLA Colony,<br>Jawahar Chowk, Bhopal</p>
+                <p><a href="#initiatives" style="color:#999; text-decoration:none">Our Work</a></p>
+                <p><a href="#donate" style="color:#999; text-decoration:none">Donate</a></p>
+                <p><a href="#contact" style="color:#999; text-decoration:none">Contact</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -674,33 +582,30 @@
     </footer>
 
     <script>
-        function moveSlide(containerId, step) {
-            const container = document.getElementById(containerId);
-            const slides = container.getElementsByClassName('carousel-slide');
-            let activeIndex = -1;
+        function autoSlide() {
+            const carousels = document.querySelectorAll('.card-carousel');
+            
+            carousels.forEach(carousel => {
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                if (slides.length <= 1) return; // Don't cycle if only 1 image
 
-            for (let i = 0; i < slides.length; i++) {
-                if (slides[i].classList.contains('active')) {
-                    activeIndex = i;
-                    break;
-                }
-            }
+                let activeIndex = 0;
+                // Find current active
+                slides.forEach((slide, index) => {
+                    if (slide.classList.contains('active')) activeIndex = index;
+                });
 
-            let newIndex = activeIndex + step;
-            if (newIndex >= slides.length) newIndex = 0;
-            if (newIndex < 0) newIndex = slides.length - 1;
+                // Calculate next
+                let nextIndex = (activeIndex + 1) % slides.length;
 
-            slides[activeIndex].classList.remove('active');
-            slides[newIndex].classList.add('active');
+                // Swap classes
+                slides[activeIndex].classList.remove('active');
+                slides[nextIndex].classList.add('active');
+            });
         }
 
-        // Auto-cycle all carousels every 5 seconds
-        setInterval(() => {
-            const containers = document.querySelectorAll('.carousel-container');
-            containers.forEach(container => {
-                moveSlide(container.id, 1);
-            });
-        }, 5000);
+        // Run every 4 seconds
+        setInterval(autoSlide, 4000);
     </script>
 
 </body>
