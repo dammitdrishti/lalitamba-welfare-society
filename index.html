@@ -41,18 +41,10 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 0.5rem 0; /* Added padding to container */
         }
 
-        .header-top {
-            background: linear-gradient(to right, #2c3e50, #4ca1af);
-            color: white;
-            padding: 8px 5%;
-            font-size: 0.8rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            letter-spacing: 0.5px;
-        }
+        /* Top bar removed here */
 
         .navbar {
             padding: 0.8rem 5%;
@@ -60,6 +52,8 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            max-width: 1250px; /* Center nav on large screens */
+            margin: 0 auto;
         }
 
         .logo-container {
@@ -111,13 +105,14 @@
         }
         .btn-donate-nav:hover { transform: translateY(-2px); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (UPDATED FOR VISIBILITY) --- */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/6.6.jpeg');
+            /* Increased overlay opacity to 0.8 for better contrast */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/6.6.jpeg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect */
+            background-attachment: fixed;
             color: white;
             padding: 6rem 5%;
             text-align: center;
@@ -132,6 +127,8 @@
             font-size: 3.5rem; 
             margin-bottom: 1rem; 
             font-weight: 700;
+            color: var(--white); /* Ensure title is white */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Added shadow for pop */
             animation: fadeInDown 1s ease;
         }
         
@@ -139,7 +136,8 @@
             font-size: 1.25rem; 
             max-width: 750px; 
             margin-bottom: 2.5rem; 
-            opacity: 0.9;
+            opacity: 1; /* Full opacity */
+            color: rgba(255,255,255,0.95); /* Almost pure white text */
             animation: fadeInUp 1s ease 0.3s backwards;
         }
 
@@ -284,7 +282,7 @@
         }
         .qr-img { width: 100%; max-width: 250px; height: auto; margin: 15px 0; }
         
-        /* --- CONTACT SECTION --- */
+        /* --- CONTACT SECTION (NEW CLEAN LAYOUT) --- */
         .contact-container { display: flex; flex-wrap: wrap; gap: 3rem; }
 
         .contact-info { 
@@ -307,6 +305,28 @@
         }
         .contact-item h5 { font-size: 1.1rem; margin-bottom: 5px; }
         .contact-item p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* Cleaner Social Media Section */
+        .social-connect-box {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .social-qr-clean {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+        .social-links-container h5 { margin-bottom: 10px; }
+        .social-icons-row { display: flex; gap: 15px; }
+        .social-icon-link { font-size: 1.8rem; transition: transform 0.2s; }
+        .social-icon-link:hover { transform: scale(1.1); }
+
 
         .form-box {
             flex: 1.5; min-width: 300px;
@@ -359,6 +379,7 @@
             .initiative-row { flex-direction: column !important; }
             .initiative-text { padding: 2rem; }
             .carousel-container { height: 250px; }
+            .social-connect-box { flex-direction: column; text-align: center; }
             .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
@@ -366,10 +387,6 @@
 <body>
 
     <header>
-        <div class="header-top">
-            <span><i class="fas fa-certificate"></i> 12A, 80G, CSR Certified</span>
-            <span>Reg. No: 01/01/01/24673/12</span>
-        </div>
         <nav class="navbar">
             <div class="logo-container">
                 <img src="images/logo.jpeg" alt="Lalitamba Logo" class="logo-img">
@@ -577,12 +594,15 @@
                     </div>
                 </div>
                 
-                <div style="margin-top: 3rem; text-align: center; border-top: 1px solid #eee; padding-top: 2rem;">
-                    <h5 style="margin-bottom: 1rem;">Connect on Social Media</h5>
-                    <img src="images/insta.jpeg" alt="Instagram QR" style="width: 120px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
-                        <a href="https://www.instagram.com/lalitamba.society?utm_source=qr&igsh=MTJzZHlwdHkza25odQ==" target="_blank" style="color: #E1306C; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/1968sdhoyJ/" target="_blank" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                <div class="social-connect-box">
+                    <img src="images/insta.jpeg" alt="Instagram QR" class="social-qr-clean">
+                    <div class="social-links-container">
+                        <h5>Connect on Social Media</h5>
+                        <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: 10px;">Scan QR or click icons below:</p>
+                        <div class="social-icons-row">
+                            <a href="https://www.instagram.com/lalitamba.society?utm_source=qr&igsh=MTJzZHlwdHkza25odQ==" target="_blank" class="social-icon-link" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/1968sdhoyJ/" target="_blank" class="social-icon-link" style="color: #1877F2;"><i class="fab fa-facebook"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -632,24 +652,24 @@
         <div class="footer-content">
             <div class="footer-col" style="flex: 1.5;">
                 <h4 style="color: var(--primary);">Lalitamba Social Welfare Society</h4>
-                <p>Empowering the underprivileged through education, health, and skill development.</p>
-                <p><strong>Reg. Address:</strong> 68, New MLA Colony, Jawahar Chowk, Bhopal</p>
+                <p>Empowering the underprivileged through education, health, and skill development since 2012.</p>
+                <p style="margin-top: 15px;"><strong style="color:white;">Reg. No:</strong> 01/01/01/24673/12<br>
+                <strong style="color:white;">Certifications:</strong> 12A, 80G, CSR Approved</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <p><a href="#about" style="color:#aaa; text-decoration:none;">About Us</a></p>
                 <p><a href="#initiatives" style="color:#aaa; text-decoration:none;">Our Projects</a></p>
                 <p><a href="#donate" style="color:#aaa; text-decoration:none;">Donate</a></p>
+                <p><a href="#contact" style="color:#aaa; text-decoration:none;">Contact</a></p>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
-                <p>Reg No: 01/01/01/24673/12</p>
-                <p>12A & 80G Certified</p>
-                <p>CSR Approved</p>
+                 <h4>Location</h4>
+                 <p>68, New MLA Colony,<br>Jawahar Chowk, Bhopal</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Lalitamba Social Welfare Society. All Rights Reserved.</p>
+            <p>© 2025 Lalitamba Social Welfare Society. All Rights Reserved.</p>
         </div>
     </footer>
 
