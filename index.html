@@ -162,23 +162,8 @@
         @media (max-width: 768px) { .gallery-grid { column-count: 2; } }
         @media (max-width: 480px) { .gallery-grid { column-count: 1; } }
 
-        /* --- WAVE DIVIDER --- */
-        .wave-divider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            background-color: var(--white); /* Top matches gallery */
-        }
-        .wave-divider svg {
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 80px;
-        }
-        .wave-fill { fill: var(--donate-bg); } /* Bottom matches donation section */
-
         /* --- DONATION SECTION --- */
-        .donate-section { background-color: var(--donate-bg); padding: 2rem 5% 6rem; } /* Reduced top padding */
+        .donate-section { background-color: var(--donate-bg); padding: 5rem 5%; }
         .donate-layout {
             display: flex; align-items: center; justify-content: space-between;
             max-width: 1100px; margin: 0 auto; gap: 4rem; flex-wrap: wrap;
@@ -461,12 +446,6 @@
             <button class="view-more-btn" onclick="loadMoreImages()" id="viewMoreBtn">View More Moments <i class="fas fa-chevron-down"></i></button>
         </div>
     </section>
-
-    <div class="wave-divider">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-fill"></path>
-        </svg>
-    </div>
 
     <section id="donate" class="donate-section">
         <div class="donate-layout">
