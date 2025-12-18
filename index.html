@@ -151,6 +151,28 @@
         .gallery-item:hover { transform: translateY(-5px); }
         .gallery-item:hover img { transform: scale(1.05); }
 
+        /* Hide items by default for "View More" feature */
+        .gallery-hidden { display: none; }
+
+        /* View More Button Styles */
+        .view-more-container { text-align: center; margin-top: 2rem; }
+        .view-more-btn {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .view-more-btn:hover {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.3);
+        }
+
         @media (max-width: 1024px) { .gallery-grid { column-count: 3; } }
         @media (max-width: 768px) { .gallery-grid { column-count: 2; } }
         @media (max-width: 480px) { .gallery-grid { column-count: 1; } }
@@ -226,57 +248,6 @@
             .donate-layout { flex-direction: column; text-align: center; }
             .social-connect-box { flex-direction: column; text-align: center; }
         }
-        /* --- GALLERY SPECIFIC STYLES --- */
-.gallery-grid {
-    column-count: 4;
-    column-gap: 15px;
-}
-
-.gallery-item {
-    margin-bottom: 15px;
-    break-inside: avoid;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.gallery-item img {
-    width: 100%;
-    display: block;
-    border-radius: 12px;
-    transition: transform 0.5s;
-}
-
-.gallery-item:hover { transform: translateY(-5px); }
-.gallery-item:hover img { transform: scale(1.05); }
-
-/* Hide items by default for "View More" feature */
-.gallery-hidden { display: none; }
-
-/* View More Button Styles */
-.view-more-container { text-align: center; margin-top: 2rem; }
-.view-more-btn {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 12px 35px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-.view-more-btn:hover {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 5px 15px rgba(255, 111, 0, 0.3);
-}
-
-/* Responsive Columns */
-@media (max-width: 1024px) { .gallery-grid { column-count: 3; } }
-@media (max-width: 768px) { .gallery-grid { column-count: 2; } }
-@media (max-width: 480px) { .gallery-grid { column-count: 1; } }
     </style>
 </head>
 <body>
@@ -450,46 +421,46 @@
         </div>
     </section>
 
-   <section id="gallery" class="section-padding" style="background: white;">
-    <h2 class="section-title">Moments of <span>Impact</span></h2>
-    
-    <div class="gallery-grid" id="galleryGrid">
-        <div class="gallery-item"><img src="images/1.1.jpeg" alt="Education"></div>
-        <div class="gallery-item"><img src="images/2.1.jpeg" alt="Women Welfare"></div>
-        <div class="gallery-item"><img src="images/2.2.jpeg" alt="Empowerment"></div>
-        <div class="gallery-item"><img src="images/3.1.jpeg" alt="Health Camp"></div>
-        <div class="gallery-item"><img src="images/4.1.jpeg" alt="Tree Plantation"></div>
-        <div class="gallery-item"><img src="images/5.1.jpeg" alt="Community Support"></div>
-        <div class="gallery-item"><img src="images/6.1.jpeg" alt="Youth Event"></div>
-        <div class="gallery-item"><img src="images/7.1.jpeg" alt="Handicraft Mela"></div>
-        <div class="gallery-item"><img src="images/9.1.jpeg" alt="Mitti Ke Ganesh"></div>
-        <div class="gallery-item"><img src="images/2.3.jpeg" alt="Workshop"></div>
-        <div class="gallery-item"><img src="images/3.2.jpeg" alt="Checkup"></div>
-        <div class="gallery-item"><img src="images/4.2.jpeg" alt="Green Drive"></div>
+    <section id="gallery" class="section-padding" style="background: white;">
+        <h2 class="section-title">Moments of <span>Impact</span></h2>
+        
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item"><img src="images/1.1.jpeg" alt="Education"></div>
+            <div class="gallery-item"><img src="images/2.1.jpeg" alt="Women Welfare"></div>
+            <div class="gallery-item"><img src="images/2.2.jpeg" alt="Empowerment"></div>
+            <div class="gallery-item"><img src="images/3.1.jpeg" alt="Health Camp"></div>
+            <div class="gallery-item"><img src="images/4.1.jpeg" alt="Tree Plantation"></div>
+            <div class="gallery-item"><img src="images/5.1.jpeg" alt="Community Support"></div>
+            <div class="gallery-item"><img src="images/6.1.jpeg" alt="Youth Event"></div>
+            <div class="gallery-item"><img src="images/7.1.jpeg" alt="Handicraft Mela"></div>
+            <div class="gallery-item"><img src="images/9.1.jpeg" alt="Mitti Ke Ganesh"></div>
+            <div class="gallery-item"><img src="images/2.3.jpeg" alt="Workshop"></div>
+            <div class="gallery-item"><img src="images/3.2.jpeg" alt="Checkup"></div>
+            <div class="gallery-item"><img src="images/4.2.jpeg" alt="Green Drive"></div>
 
-        <div class="gallery-item gallery-hidden"><img src="images/2.4.jpeg" alt="Activity"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/2.5.jpeg" alt="Session"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/2.6.jpeg" alt="Group Photo"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/3.3.jpeg" alt="Medical Camp"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/3.4.jpeg" alt="Health Check"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/4.3.jpeg" alt="Planting"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/4.4.jpeg" alt="Environment"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/5.2.jpeg" alt="Distribution"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/5.3.jpeg" alt="Support"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/5.4.jpeg" alt="Donation Drive"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/6.2.jpeg" alt="Students"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/6.3.jpeg" alt="Award"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/6.4.jpeg" alt="Classroom"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/6.5.jpeg" alt="Ceremony"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/6.6.jpeg" alt="Youth Group"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/7.2.jpeg" alt="Artisans"></div>
-        <div class="gallery-item gallery-hidden"><img src="images/9.2.jpeg" alt="Eco Friendly"></div>
-    </div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.4.jpeg" alt="Activity"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.5.jpeg" alt="Session"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.6.jpeg" alt="Group Photo"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/3.3.jpeg" alt="Medical Camp"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/3.4.jpeg" alt="Health Check"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/4.3.jpeg" alt="Planting"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/4.4.jpeg" alt="Environment"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/5.2.jpeg" alt="Distribution"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/5.3.jpeg" alt="Support"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/5.4.jpeg" alt="Donation Drive"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.2.jpeg" alt="Students"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.3.jpeg" alt="Award"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.4.jpeg" alt="Classroom"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.5.jpeg" alt="Ceremony"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.6.jpeg" alt="Youth Group"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/7.2.jpeg" alt="Artisans"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/9.2.jpeg" alt="Eco Friendly"></div>
+        </div>
 
-    <div class="view-more-container">
-        <button class="view-more-btn" onclick="loadMoreImages()" id="viewMoreBtn">View More Moments <i class="fas fa-chevron-down"></i></button>
-    </div>
-</section>
+        <div class="view-more-container">
+            <button class="view-more-btn" onclick="loadMoreImages()" id="viewMoreBtn">View More Moments <i class="fas fa-chevron-down"></i></button>
+        </div>
+    </section>
 
     <section id="donate" class="donate-section">
         <div class="donate-layout">
@@ -614,6 +585,17 @@
     </footer>
 
     <script>
+        // Gallery Button Logic
+        function loadMoreImages() {
+            const hiddenItems = document.querySelectorAll('.gallery-hidden');
+            hiddenItems.forEach(item => {
+                item.style.display = 'inline-block';
+                item.classList.remove('gallery-hidden');
+            });
+            document.getElementById('viewMoreBtn').style.display = 'none';
+        }
+
+        // Carousel Logic
         function moveSlide(containerId, step) {
             const container = document.getElementById(containerId);
             const slides = container.getElementsByClassName('carousel-slide');
