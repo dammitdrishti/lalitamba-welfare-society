@@ -112,14 +112,16 @@
         .initiative-row:hover { transform: translateY(-5px); }
         .initiative-row:nth-child(even) { flex-direction: row-reverse; }
 
-        .initiative-text { flex: 1; min-width: 320px; padding: 3rem; }
+        .initiative-text { 
+            flex: 1; 
+            min-width: 320px; 
+            padding: 3rem; 
+            background-color: #FFF8E1; /* Light Orange Background Added Here */
+        }
         .initiative-text h3 { color: var(--text-dark); font-size: 1.8rem; margin-bottom: 1rem; }
         .initiative-text p { color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1rem; }
         
-        .initiative-number {
-            display: inline-block; background: var(--primary-light); color: var(--primary);
-            font-weight: bold; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 10px;
-        }
+        /* Removed .initiative-number class as it is no longer used */
 
         .carousel-container { flex: 1; min-width: 320px; position: relative; height: 400px; overflow: hidden; background: #eee; }
         .carousel-slide { width: 100%; height: 100%; object-fit: cover; position: absolute; transition: opacity 0.6s ease-in-out; }
@@ -267,7 +269,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 01</span>
                 <h3>Education & IT Training</h3>
                 <p>We run the <strong>Unique Skills Academy of IT Education</strong>, affiliated with Makhanlal Chaturvedi National University. Offering PGDCA, DCA, and job-oriented courses to empower youth with industry-relevant digital skills.</p>
                 <a href="https://Usabpl.in" target="_blank" class="usa-btn">Visit Academy Website <i class="fas fa-arrow-right"></i></a>
@@ -281,7 +282,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 02</span>
                 <h3>Women & Child Welfare</h3>
                 <p>Uplifting women and children through self-defense classes, nutrition sessions, and essential distribution in Anganwadis. We focus on early childhood education and creating a secure, informed society.</p>
             </div>
@@ -299,7 +299,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 03</span>
                 <h3>Health & Hygiene Awareness</h3>
                 <p>Regular health camps, blood donation drives, and hygiene awareness campaigns. We provide free medical check-ups and immunization support to make healthcare accessible for the underprivileged.</p>
             </div>
@@ -315,7 +314,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 04</span>
                 <h3>Environment & Cleanliness</h3>
                 <p>Promoting sustainability through the Green India Mission. We organize tree plantation drives and Swachhta Abhiyan campaigns to instill a culture of cleanliness and civic responsibility.</p>
             </div>
@@ -331,7 +329,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 05</span>
                 <h3>Community Support & Relief</h3>
                 <p>Standing by the community during festivals and emergencies. We distribute food, clothes, and hygiene essentials to the most vulnerable sections of society with dignity and compassion.</p>
             </div>
@@ -347,7 +344,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 06</span>
                 <h3>Youth Development & Culture</h3>
                 <p>Fostering the growth of future leaders through skill development workshops, public speaking, sports meets, and cultural engagement activities that nurture creativity and confidence.</p>
             </div>
@@ -365,7 +361,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 07</span>
                 <h3>Handicraft Mela & Entrepreneurship</h3>
                 <p>Supporting artisans and small-scale entrepreneurs by organizing fairs that showcase handmade products. A platform to boost income generation and celebrate cultural heritage.</p>
             </div>
@@ -379,7 +374,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 08</span>
                 <h3>Women Entrepreneur Awards</h3>
                 <p>Celebrating International Women's Day by honoring outstanding women entrepreneurs. This initiative recognizes courage, innovation, and resilience in business to inspire others.</p>
             </div>
@@ -393,7 +387,6 @@
 
         <div class="initiative-row">
             <div class="initiative-text">
-                <span class="initiative-number">Initiative 09</span>
                 <h3>Mitti Ke Ganesh Workshop</h3>
                 <p>An eco-friendly initiative inviting the community to create clay Ganesh idols. Spreading awareness about pollution-free celebrations and using natural materials.</p>
             </div>
