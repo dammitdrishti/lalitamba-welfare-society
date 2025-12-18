@@ -18,7 +18,7 @@
             --text-gray: #636e72;
             --white: #ffffff;
             --bg-light: #f8f9fa;
-            --donate-bg: #FFF8E1; /* Cream color for donation */
+            --donate-bg: #FFF8E1; /* Cream color */
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
             --radius: 12px;
         }
@@ -162,24 +162,23 @@
         @media (max-width: 768px) { .gallery-grid { column-count: 2; } }
         @media (max-width: 480px) { .gallery-grid { column-count: 1; } }
 
-        /* --- WAVE SEPARATOR --- */
-        .wave-container {
+        /* --- WAVE DIVIDER --- */
+        .wave-divider {
             position: relative;
-            background: var(--white);
-            height: 100px;
+            width: 100%;
             overflow: hidden;
-            width: 100%;
-            margin-bottom: -1px; /* Prevents tiny line gap */
+            line-height: 0;
+            background-color: var(--white); /* Top matches gallery */
         }
-        .wave-svg {
+        .wave-divider svg {
             display: block;
-            width: 100%;
-            height: 100%;
+            width: calc(100% + 1.3px);
+            height: 80px;
         }
+        .wave-fill { fill: var(--donate-bg); } /* Bottom matches donation section */
 
         /* --- DONATION SECTION --- */
-        .donate-section { background-color: var(--donate-bg); padding: 4rem 5% 6rem; } /* Adjusted padding */
-        
+        .donate-section { background-color: var(--donate-bg); padding: 2rem 5% 6rem; } /* Reduced top padding */
         .donate-layout {
             display: flex; align-items: center; justify-content: space-between;
             max-width: 1100px; margin: 0 auto; gap: 4rem; flex-wrap: wrap;
@@ -463,9 +462,9 @@
         </div>
     </section>
 
-    <div class="wave-container">
-        <svg class="wave-svg" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#FFF8E1" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    <div class="wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-fill"></path>
         </svg>
     </div>
 
