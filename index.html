@@ -13,12 +13,12 @@
         :root {
             --primary: #FF6F00; /* Vibrant Orange */
             --primary-dark: #E65100;
-            --primary-light: #FFF3E0;
+            --primary-light: #FFF3E0; /* Lightest Orange */
             --text-dark: #2D3436;
             --text-gray: #636e72;
             --white: #ffffff;
             --bg-light: #f8f9fa;
-            --donate-bg: #FFF8E1; /* Cream color */
+            --donate-bg: #FFF8E1; /* Cream color for donation section */
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
             --radius: 12px;
         }
@@ -105,7 +105,8 @@
 
         /* --- INITIATIVES --- */
         .initiative-row {
-            display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; margin-bottom: 4rem;
+            display: flex; flex-wrap: wrap; align-items: center; gap: 0; /* Removed gap to make card seamless */
+            margin-bottom: 4rem;
             background: var(--white); padding: 0; border-radius: var(--radius); box-shadow: var(--shadow);
             overflow: hidden; transition: transform 0.3s;
         }
@@ -116,13 +117,15 @@
             flex: 1; 
             min-width: 320px; 
             padding: 3rem; 
-            background-color: #FFF8E1; /* Light Orange Background Added Here */
+            background-color: var(--primary-light); /* Light Orange Background */
+            height: 400px; /* Match height of carousel */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .initiative-text h3 { color: var(--text-dark); font-size: 1.8rem; margin-bottom: 1rem; }
         .initiative-text p { color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1rem; }
         
-        /* Removed .initiative-number class as it is no longer used */
-
         .carousel-container { flex: 1; min-width: 320px; position: relative; height: 400px; overflow: hidden; background: #eee; }
         .carousel-slide { width: 100%; height: 100%; object-fit: cover; position: absolute; transition: opacity 0.6s ease-in-out; }
         .carousel-slide.active { opacity: 1; z-index: 2; }
@@ -137,7 +140,7 @@
         .usa-btn {
             display: inline-flex; align-items: center; gap: 8px; background: #007bff; color: white;
             padding: 10px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;
-            margin-top: 10px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,123,255,0.3); transition: all 0.3s;
+            margin-top: 10px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,123,255,0.3); transition: all 0.3s; width: fit-content;
         }
         .usa-btn:hover { background: #0056b3; transform: translateY(-2px); }
 
@@ -165,7 +168,7 @@
         @media (max-width: 480px) { .gallery-grid { column-count: 1; } }
 
         /* --- DONATION SECTION --- */
-        .donate-section { background-color: var(--donate-bg); padding: 5rem 5%; }
+        .donate-section { background-color: var(--donate-bg); padding: 5rem 5%; border-top: 1px solid #eee; } /* Clean separation */
         .donate-layout {
             display: flex; align-items: center; justify-content: space-between;
             max-width: 1100px; margin: 0 auto; gap: 4rem; flex-wrap: wrap;
@@ -232,6 +235,7 @@
             .nav-links { flex-wrap: wrap; justify-content: center; }
             .hero h2 { font-size: 2.2rem; }
             .initiative-row { flex-direction: column !important; }
+            .initiative-text { height: auto; } /* Auto height for mobile */
             .donate-layout { flex-direction: column; text-align: center; }
             .social-connect-box { flex-direction: column; text-align: center; }
         }
@@ -275,6 +279,10 @@
             </div>
             <div class="carousel-container" id="c1">
                 <img src="images/1.1.jpeg" class="carousel-slide active">
+                <img src="images/1.2.jpeg" class="carousel-slide">
+                <img src="images/1.3.jpeg" class="carousel-slide">
+                <img src="images/1.4.jpeg" class="carousel-slide">
+                <img src="images/1.5.jpeg" class="carousel-slide">
                 <button class="carousel-btn prev" onclick="moveSlide('c1', -1)">❮</button>
                 <button class="carousel-btn next" onclick="moveSlide('c1', 1)">❯</button>
             </div>
@@ -292,6 +300,7 @@
                 <img src="images/2.4.jpeg" class="carousel-slide">
                 <img src="images/2.5.jpeg" class="carousel-slide">
                 <img src="images/2.6.jpeg" class="carousel-slide">
+                <img src="images/2.7.jpeg" class="carousel-slide">
                 <button class="carousel-btn prev" onclick="moveSlide('c2', -1)">❮</button>
                 <button class="carousel-btn next" onclick="moveSlide('c2', 1)">❯</button>
             </div>
@@ -307,6 +316,7 @@
                 <img src="images/3.2.jpeg" class="carousel-slide">
                 <img src="images/3.3.jpeg" class="carousel-slide">
                 <img src="images/3.4.jpeg" class="carousel-slide">
+                <img src="images/3.5.jpeg" class="carousel-slide">
                 <button class="carousel-btn prev" onclick="moveSlide('c3', -1)">❮</button>
                 <button class="carousel-btn next" onclick="moveSlide('c3', 1)">❯</button>
             </div>
@@ -367,6 +377,10 @@
             <div class="carousel-container" id="c7">
                 <img src="images/7.1.jpeg" class="carousel-slide active">
                 <img src="images/7.2.jpeg" class="carousel-slide">
+                <img src="images/7.3.jpeg" class="carousel-slide">
+                <img src="images/7.4.jpeg" class="carousel-slide">
+                <img src="images/7.5.jpeg" class="carousel-slide">
+                <img src="images/7.6.jpeg" class="carousel-slide">
                 <button class="carousel-btn prev" onclick="moveSlide('c7', -1)">❮</button>
                 <button class="carousel-btn next" onclick="moveSlide('c7', 1)">❯</button>
             </div>
@@ -378,8 +392,9 @@
                 <p>Celebrating International Women's Day by honoring outstanding women entrepreneurs. This initiative recognizes courage, innovation, and resilience in business to inspire others.</p>
             </div>
             <div class="carousel-container" id="c8">
-                <img src="images/2.3.jpeg" class="carousel-slide active">
-                <img src="images/2.4.jpeg" class="carousel-slide">
+                <img src="images/8.1.jpeg" class="carousel-slide active">
+                <img src="images/8.2.jpeg" class="carousel-slide">
+                <img src="images/8.3.jpeg" class="carousel-slide">
                 <button class="carousel-btn prev" onclick="moveSlide('c8', -1)">❮</button>
                 <button class="carousel-btn next" onclick="moveSlide('c8', 1)">❯</button>
             </div>
@@ -405,34 +420,47 @@
         <div class="gallery-grid" id="galleryGrid">
             <div class="gallery-item"><img src="images/1.1.jpeg" alt="Education"></div>
             <div class="gallery-item"><img src="images/2.1.jpeg" alt="Women Welfare"></div>
-            <div class="gallery-item"><img src="images/2.2.jpeg" alt="Empowerment"></div>
             <div class="gallery-item"><img src="images/3.1.jpeg" alt="Health Camp"></div>
             <div class="gallery-item"><img src="images/4.1.jpeg" alt="Tree Plantation"></div>
             <div class="gallery-item"><img src="images/5.1.jpeg" alt="Community Support"></div>
             <div class="gallery-item"><img src="images/6.1.jpeg" alt="Youth Event"></div>
             <div class="gallery-item"><img src="images/7.1.jpeg" alt="Handicraft Mela"></div>
+            <div class="gallery-item"><img src="images/8.1.jpeg" alt="Women Awards"></div>
             <div class="gallery-item"><img src="images/9.1.jpeg" alt="Mitti Ke Ganesh"></div>
-            <div class="gallery-item"><img src="images/2.3.jpeg" alt="Workshop"></div>
-            <div class="gallery-item"><img src="images/3.2.jpeg" alt="Checkup"></div>
-            <div class="gallery-item"><img src="images/4.2.jpeg" alt="Green Drive"></div>
+            <div class="gallery-item"><img src="images/1.3.jpeg" alt="Education 2"></div>
+            <div class="gallery-item"><img src="images/2.3.jpeg" alt="Women 2"></div>
+            <div class="gallery-item"><img src="images/3.3.jpeg" alt="Health 2"></div>
 
-            <div class="gallery-item gallery-hidden"><img src="images/2.4.jpeg" alt="Activity"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/2.5.jpeg" alt="Session"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/2.6.jpeg" alt="Group Photo"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/3.3.jpeg" alt="Medical Camp"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/3.4.jpeg" alt="Health Check"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/4.3.jpeg" alt="Planting"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/4.4.jpeg" alt="Environment"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/5.2.jpeg" alt="Distribution"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/5.3.jpeg" alt="Support"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/5.4.jpeg" alt="Donation Drive"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/6.2.jpeg" alt="Students"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/6.3.jpeg" alt="Award"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/6.4.jpeg" alt="Classroom"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/6.5.jpeg" alt="Ceremony"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/6.6.jpeg" alt="Youth Group"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/7.2.jpeg" alt="Artisans"></div>
-            <div class="gallery-item gallery-hidden"><img src="images/9.2.jpeg" alt="Eco Friendly"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/1.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/1.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/1.5.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.5.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.6.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/2.7.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/3.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/3.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/3.5.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/4.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/4.3.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/4.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/5.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/5.3.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/5.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.3.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.5.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/6.6.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/7.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/7.3.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/7.4.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/7.5.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/7.6.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/8.2.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/8.3.jpeg" alt="Image"></div>
+            <div class="gallery-item gallery-hidden"><img src="images/9.2.jpeg" alt="Image"></div>
         </div>
 
         <div class="view-more-container">
